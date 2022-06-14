@@ -1,0 +1,13 @@
+version: '1.1'
+services:
+  apache:
+    container_name: apa000ex1
+    image: httpd
+    ports:
+      - 8080:80
+    volumes:
+      - type: bind
+        source: ./src/
+        target: /usr/local/apache2/htdocs/
+    restart: always
+      
