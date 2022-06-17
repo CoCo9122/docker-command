@@ -23,17 +23,17 @@ docker stop wordpress000ex1
 docker stop mysql000ex1
 ```
 
-- コンテナの解除
+- コンテナの削除
 ```sh
 docker rm wordpress000ex1
 docker rm mysql000ex1
 ```
-- イメージの解除
+- イメージの削除
 ```sh
 docker image rm wordpress
 docker image rm mysql
 ```
-- ネットワークの解除
+- ネットワークの削除
 ```sh
 $ docker network rm wordpress000net1
 ```
