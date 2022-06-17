@@ -25,5 +25,5 @@ docker compose up -d
 ```
 - コンテナを停止し、 `up`で作成したコンテナ、ネットワーク、ボリューム、イメージを削除
 ```console
-docker compose down --rmi all
+docker compose down --rmi all -v
 ```
