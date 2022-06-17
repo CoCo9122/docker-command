@@ -1,12 +1,12 @@
 ### Docker Command
 
 - dockerのバージョン
-```console
+```sh
 $ docker version
 ```
 
 - コンテナ操作関連コマンド
-```console
+```sh
 $ docker container 副コマンド オプション
 ```
 
@@ -23,7 +23,7 @@ $ docker container 副コマンド オプション
 | commit | Dockerコンテナをイメージに変換する             | 可   | あまり指定しない                 |
 
 - イメージ操作関連コマンド
-```console
+```sh
 $ docker image 副コマンド オプション
 ```
 | 副コマンド | 内容                               | 副コマンド | オプション |
@@ -34,7 +34,7 @@ $ docker image 副コマンド オプション
 | build | Dockerイメージを作成する                  | 可     | -t      |
 
 - ボリューム操作関連コマンド
-```console
+```sh
 $ docker volume 副コマンド オプション
 ```
 | 副コマンド   | 内容                        | 副コマンド | オプション  |
@@ -46,7 +46,7 @@ $ docker volume 副コマンド オプション
 | rm      | 指定したボリュームを解除する            | 不可    | あまり指定しない       |
 
 - ネットワーク操作関連のコマンド
-```console
+```sh
 $ docker network 副コマンド オプション
 ```
 | 副コマンド      | 内容                            | 副コマンド | オプション |

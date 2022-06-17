@@ -1,21 +1,21 @@
 ## DockerにおけるNginxコンテナの作成
 
 - Nginxコンテナの作成・起動
-```console
+```sh
 $ docker run --name nginx000ex1 -d nginx
 ```
 - Nginxコンテナの停止
-```conole
+```sh
 $ docker stop nginx000ex1
 ```
 
 - Nginxコンテナの解除
-```conole
+```sh
 $ docker rm nginx000ex1
 ```
 
 - ポートを指定してNginxコンテナの作成・起動
-```conole
+```sh
 $ docker run --name nginx000ex2 -d -p 8080:80 nginx
 ```
 
@@ -24,10 +24,10 @@ $ docker run --name nginx000ex2 -d -p 8080:80 nginx
 [http://localhost:8080/](http://localhost:8080/)
 
 - Nginxコンテナの解除
-```conole
+```sh
 $ docker rm nginx000ex2
 ```
 
 - ドキュメントルート
-```
+```sh
 /usr/share/nginx/html
