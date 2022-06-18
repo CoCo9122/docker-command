@@ -1,0 +1,35 @@
+version: "3"
+services:
+  wordpress:
+    build: 
+      context: .
+      dockerfile: ./docker/wordpress/Dockerfile
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=database:3306
+      - WORDPRESS_DB_NAME=wordpress000db
+      - WORDPRESS_DB_USER=wordpress000kun
+      - WORDPRESS_DB_PASSWORD=wkunpass
+    
+  database:
+    build: 
+      context: .
+      dockerfile: ./docker/mariadb/Dockerfile
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=mariarootpass
+      - MYSQL_DATABASE=wordpress000db
+      - MYSQL_USER=wordpress000kun
+      - MYSQL_PASSWORD=wkunpass
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+volumes:
+  db_data:
+    
