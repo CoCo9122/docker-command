@@ -8,4 +8,4 @@ RUN pip install jupyterlab
 RUN pip install numpy
 RUN pip install matplotlib
 
-CMD ["jupyter", "lab", "--port", "8080", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
+CMD ["jupyter", "lab", "--port", "8080", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.token=''"]
