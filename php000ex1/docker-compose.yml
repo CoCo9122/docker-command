@@ -1,0 +1,38 @@
+version: "3"
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      - .:/var/www
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - 8000:80 
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    working_dir: /var/www
+    depends_on:
+      - php
+  database:
+    build: 
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=myrootpass
+      - MYSQL_DATABASE=php000db
+      - MYSQL_USER=php000user
+      - MYSQL_PASSWORD=phppass
+      - TZ='Asia/Tokyo'
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+volumes:
+  db_data:
